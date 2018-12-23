@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Dice v-on:rolled="diceRolled"></Dice>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Dice from './components/Dice.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Dice
+  },
+  methods: {
+    diceRolled (num) {
+      console.log(num)
+    }
   }
 }
 </script>
