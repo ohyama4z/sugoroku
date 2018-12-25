@@ -1,12 +1,15 @@
 <template>
   <div id="app">
+    <div v-if="rank">
+      {{ rank }}着！
+    </div>
     <div
       class="square"
       v-for="i in goal"
       v-bind:key="i"
     >
       {{ i }}<br>
-      <div v-if="i === position">あんパン</div>
+      <div v-if="i === position">{{ name }}</div>
     </div>
   </div>
 </template>
@@ -16,7 +19,9 @@ export default {
   name: 'sheet',
   props: [
     'position',
-    'goal'
+    'goal',
+    'name',
+    'rank'
   ],
   components: {
   },
@@ -29,6 +34,6 @@ export default {
 .square {
   width: 100px;
   height: 100px;
-  border: solid 1px #000000;
+  border: solid 1px #aaaaaa;
 }
 </style>
