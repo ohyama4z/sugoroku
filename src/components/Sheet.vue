@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    {{ name }}<br>出目：{{ dice }}
     <div v-if="rank">
       {{ rank }}着！
     </div>
@@ -21,7 +22,8 @@ export default {
     'position',
     'goal',
     'name',
-    'rank'
+    'rank',
+    'dice'
   ],
   components: {
   },
