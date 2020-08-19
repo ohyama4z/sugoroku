@@ -32,7 +32,7 @@ io.sockets.on('connection', socket => {
     const data = JSON.parse(unparsedData)
     users.push({
       id: socket.id,
-      name: data.name,
+      name: data.name
     })
     console.log('参加した')
     io.sockets.emit('entered', JSON.stringify(users))
@@ -81,7 +81,6 @@ io.sockets.on('connection', socket => {
         lastDice: null
       })
     })
-  
     io.sockets.emit('started', JSON.stringify(boardData))
 
     /*
